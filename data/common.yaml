@@ -1,5 +1,9 @@
 ---
 lookup_options:
+  openafs::server_common::files:
+    merge:
+      strategy: "deep"
+      merge_hash_arrays: true
   profile_monitoring::telegraf::inputs_extra:
     merge:
       strategy: "deep"
@@ -23,6 +27,25 @@ anchors:
 
 message: "This node is using common data"
 
+openafs::cellalias: |
+  ncsa.uiuc.edu ncsa
+openafs::server_common::cellservdb: |
+  >ncsa.uiuc.edu          #National Center for Supercomputing Applications at Illinois
+  141.142.192.66                  #nile-vm.ncsa.uiuc.edu
+  141.142.192.143                 #congo-vm.ncsa.uiuc.edu
+  141.142.192.144                 #kaskaskia-vm.ncsa.uiuc.edu
+openafs::thiscell: "ncsa.uiuc.edu"
+openafs::yumrepo::yumrepo:
+  openafs:
+    descr: "openafs"
+    ensure: "present"
+    enabled: true
+    baseurl: "https://its-repo.ncsa.illinois.edu/openafs/jsbillings/centos-$releasever-$basearch/latest/"
+    skip_if_unavailable: true
+    gpgcheck: true
+    gpgkey: "https://its-repo.ncsa.illinois.edu/openafs/jsbillings/centos-$releasever-$basearch/pubkey.gpg"
+    repo_gpgcheck: false
+
 profile::sssd::enablemkhomedir: true
 
 profile_allow_ssh_from_bastion::bastion_nodelist:
@@ -33,6 +56,8 @@ profile_allow_ssh_from_bastion::bastion_nodelist:
 profile_allow_ssh_from_bastion::groups:
   - "org_asd"
   - "org_irst"
+
+profile_audit::qualys::enabled: false
 
 profile_monitoring::telegraf::enabled: false
 profile_monitoring::telegraf::outputs:
@@ -88,7 +113,9 @@ sssd::domains:
     ldap_uri:
       - "ldaps://ldap1.ncsa.illinois.edu"
       - "ldaps://ldap2.ncsa.illinois.edu"
+    ldap_user_email: "login_via_email_address_is_disabled"
     ldap_user_search_base: "dc=ncsa,dc=illinois,dc=edu"
+    selinux_provider: "none"
     # LEAVE simple_allow_groups BLANK - ncsa/sshd MODULE DYNAMICALLY ADDS GROUPS
     #simple_allow_groups:
     simple_deny_groups:
@@ -289,32 +316,13 @@ sssd::services:
       - "tss"
       - "unbound"
       - "wireshark"
-      # NCSA LDAP users w/ uid below 1000:
-      - "acraig"
-      - "bw"
-      - "cbushell"
-      - "ceperley"
-      - "cox"
-      - "ferguson"
-      - "johns"
-      - "lex"
-      - "norman"
-      - "proth"
-      - "radha"
-      - "redman"
-      - "rkufrin"
-      - "scott"
-      - "scoyle"
-      - "straka"
-      - "svinson"
-      - "u10956"
-      - "welge"
-      - "wicker"
   pam: {}
 
 telegraf::agent:
   flush_interval: "10s"
   metric_buffer_limit: "100000"
+telegraf::config_file_mode: "0640"
+telegraf::config_folder_mode: "0750"
 telegraf::flush_jitter: "10s"
 telegraf::hostname: "%{::fqdn}"
 telegraf::inputs:
@@ -323,20 +331,29 @@ telegraf::inputs:
     totalcpu: true
   disk:
     ignore_fs:
-      - "devtmpfs"
+      - "afs"
       - "devfs"
-  ipmi_sensor:
-    path: "/usr/bin/ipmitool"
-    interval: "60s"
-    timeout: "10s"
+      - "devtmpfs"
+      - "gpfs"
+      - "lustre"
+      - "nfs"
+      - "nfs4"
+      - "tmpfs"
+  io: [{}]
+  # NEED TO ADD ipmi_sensor FOR PHYSICAL NODES
+  #ipmi_sensor:
+  #  path: "/usr/bin/ipmitool"
+  #  interval: "60s"
+  #  timeout: "10s"
   mem: [{}]
   net:
     interfaces:
       - "e*"
       - "bond*"
   processes: [{}]
-  puppetagent:
-    location: "/opt/puppetlabs/puppet/cache/state/last_run_summary.yaml"
+  # NEED TO FIX telegraf ACCESS TO PUPPET REPORTS
+  #puppetagent:
+  #  location: "/opt/puppetlabs/puppet/public/last_run_summary.yaml"
   swap: [{}]
   system: [{}]
   systemd_units:

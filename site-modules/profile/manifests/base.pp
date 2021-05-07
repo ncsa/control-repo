@@ -13,6 +13,7 @@ class profile::base {
   include ::profile_puppet_agent
   include ::profile_sudo
   include ::profile_timezone
+  include ::profile_selinux
   include ::profile_system_auth
   include ::profile_virtual
   include ::sshd

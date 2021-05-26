@@ -1,0 +1,3 @@
+---
+yum::config_options:
+  proxy: "httpproxy.ncsa.illinois.edu:3128"

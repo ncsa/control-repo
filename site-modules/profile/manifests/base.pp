@@ -18,5 +18,6 @@ class profile::base {
   include ::profile_system_auth
   include ::profile_virtual
   include ::sshd
+  include ::yum
 
 }

@@ -3,5 +3,6 @@
 class role::vault {
 
 include ::profile::base
+include ::podman
 
 }

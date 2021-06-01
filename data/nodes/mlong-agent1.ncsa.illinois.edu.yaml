@@ -1,0 +1,3 @@
+---
+profile_sudo::users:
+  mtlong2: "ALL=(ALL) NOPASSWD: ALL"

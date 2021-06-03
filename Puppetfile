@@ -24,7 +24,7 @@ mod 'ncsa/profile_puppet_agent', tag: 'v0.1.1', git: 'https://github.com/ncsa/pu
 mod 'ncsa/profile_puppet_master', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_puppet_master'
 mod 'ncsa/profile_selinux', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_selinux'
 mod 'ncsa/profile_sudo', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-profile_sudo'
-mod 'ncsa/profile_system_auth', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_system_auth'
+mod 'ncsa/profile_system_auth', branch: 'ASDPLNG-49/rhel8', git: 'https://github.com/ncsa/puppet-profile_system_auth'
 mod 'ncsa/profile_timezone', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timezone'
 mod 'ncsa/profile_virtual', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_virtual'
 mod 'ncsa/profile_xcat', branch: 'ASDPLNG-49/update_for_ASD', git: 'https://github.com/ncsa/puppet-profile_xcat'

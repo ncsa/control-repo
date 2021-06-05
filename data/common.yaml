@@ -23,7 +23,9 @@ anchors:
 
 message: "This node is using common data"
 
-profile::sssd::enablemkhomedir: true
+pam_access::pam::redhat::authselect_features:
+  - "with-pamaccess"
+  - "with-mkhomedir"
 
 profile_allow_ssh_from_bastion::bastion_nodelist:
   - "141.142.148.5"

@@ -2,7 +2,6 @@
 class profile::base {
 
   include ::profile_additional_packages
-  include ::profile_additional_yumrepos
   include ::profile_allow_ssh_from_bastion
   include ::profile_audit
   include ::profile_dns_cache
@@ -19,5 +18,11 @@ class profile::base {
   include ::profile_system_auth
   include ::profile_virtual
   include ::sshd
+
+  # Include some modules based off osfamily
+  case $facts['osfamily'] {
+    'Redhat' : { include ::profile::redhat }
+    default  : { } # do nothing
+  }
 
 }

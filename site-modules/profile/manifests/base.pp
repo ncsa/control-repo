@@ -21,7 +21,9 @@ class profile::base {
 
   # Include some modules based off osfamily
   case $facts['osfamily'] {
-    'Redhat' : { include ::profile::redhat }
+    'Redhat' : {
+      include ::profile::redhat
+    }
     default  : { } # do nothing
   }
 

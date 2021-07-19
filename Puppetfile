@@ -1,6 +1,7 @@
 forge 'https://forge.puppet.com'
 mod 'bodgit-bodgitlib', '2.0.1'
 # mod 'bodgit-dbus', '2.0.1'
+mod 'example42-network', '3.6.0'
 mod 'herculesteam-augeasproviders', '2.4.1'
 mod 'herculesteam/augeasproviders_base', '2.1.0'
 mod 'herculesteam/augeasproviders_core', '2.6.0'

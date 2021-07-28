@@ -85,7 +85,13 @@ sssd::debug_level: 0
 sssd::domains:
   ncsa.illinois.edu:
     access_provider: "simple"
-    auth_provider: "krb5"
+    # NCSA RECOMMENDS USING: auth_provider: "krb5"
+    # BUT THAT ONLY WORKS IF YOU ARE CREATING KERBEROS HOSTKEYS
+    # YOU CAN ENABLE KERBEROS HOSTKEYS BY SETTING UP:
+    #   profile_system_auth::kerberos::createhost* PARAMETERS
+    # auth_provider IS SET TO ldap IN control-repo TEMPLATE TO NOT PUBLISH SECRETS
+    auth_provider: "ldap"
+    #auth_provider: "krb5"
     cache_credentials: false
     chpass_provider: "krb5"
     debug_level: 0

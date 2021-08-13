@@ -22,7 +22,7 @@ mod 'ncsa/profile_motd', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-pro
 mod 'ncsa/profile_pam_access', tag: 'v0.0.5', git: 'https://github.com/ncsa/puppet-profile_pam_access'
 mod 'ncsa/profile_puppet_agent', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_puppet_agent'
 mod 'ncsa/profile_puppet_master', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-profile_puppet_master'
-mod 'ncsa/profile_rsyslog', tag: 'v0.1.3', git: 'https://github.com/ncsa/puppet-profile_rsyslog'
+mod 'ncsa/profile_rsyslog', tag: 'v0.1.4', git: 'https://github.com/ncsa/puppet-profile_rsyslog'
 mod 'ncsa/profile_selinux', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_selinux'
 mod 'ncsa/profile_sudo', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-profile_sudo'
 mod 'ncsa/profile_system_auth', tag: 'v0.3.2', git: 'https://github.com/ncsa/puppet-profile_system_auth'

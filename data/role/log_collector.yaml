@@ -1,0 +1,112 @@
+---
+profile_motd::notice: "Copies of collected logs are under: /var/log/loghost"
+
+profile_rsyslog::config_inputs:
+  imtcp:
+    type: "imtcp"
+    config:
+      port: 514
+      Ruleset: "collected_messages"
+  imudp:
+    type: "imudp"
+    config:
+      port: 514
+      Ruleset: "collected_messages"
+  imrelp:
+    type: "imrelp"
+    config:
+      port: 20515
+      Ruleset: "collected_messages"
+profile_rsyslog::config_rulesets:
+  localhost_messages:
+    rules:
+      - action:
+          name: "01_all_generic_message_logs"
+          type: "omfile"
+          facility: "*.info;mail.none;authpriv.none;cron.none"
+          config:
+            file: "/var/log/messages"
+      - action:
+          name: "02_auth_logs"
+          type: "omfile"
+          facility: "auth,authpriv.*"
+          config:
+            file: "/var/log/secure"
+      - action:
+          name: "03_mail_logs"
+          type: "omfile"
+          facility: "mail.*"
+          config:
+            file: "/var/log/maillog"
+      - action:
+          name: "04_cron_logs"
+          type: "omfile"
+          facility: "cron.*"
+          config:
+            file: "/var/log/cron"
+      - action:
+          name: "05_emergency_msgs"
+          type: "omusrmsg"
+          facility: "*.emerg"
+          config:
+            users: "*"
+      - action:
+          name: "06_boot_logs"
+          type: "omfile"
+          facility: "local7.*"
+          config:
+            file: "/var/log/boot.log"
+      - action:
+          name: "all_localhost_logs"
+          type: "omfile"
+          facility: "*.*"
+          config:
+            dynaFile: "localhost_syslog"
+      - action:
+          name: "forward-localhost-to-log-collector-server-relp"
+          type: "omrelp"
+          config:
+            target: "syslog.security.ncsa.illinois.edu"
+            port: "1514"
+            queue.FileName: "forward-localhost-to-log-collector-server-buffer"
+            queue.SaveOnShutdown: "on"
+            queue.Type: "LinkedList"
+            queue.size: "1000000"
+            queue.maxdiskspace: "10000000000"
+            queue.syncqueuefiles: "on"
+            Action.ResumeInterval: "30"
+            Action.ResumeRetryCount: "-1"
+            timeout: "6"
+  collected_messages:
+    rules:
+      - action:
+          name: "all_collected"
+          type: "omfile"
+          facility: "*.*"
+          config:
+            dynaFile: "collected_syslog"
+      - action:
+          name: "forward-collected-to-log-collector-server-relp"
+          type: "omrelp"
+          config:
+            target: "syslog.security.ncsa.illinois.edu"
+            port: "1514"
+            queue.FileName: "forward-collected-to-log-collector-server-buffer"
+            queue.SaveOnShutdown: "on"
+            queue.Type: "LinkedList"
+            queue.size: "1000000"
+            queue.maxdiskspace: "10000000000"
+            queue.syncqueuefiles: "on"
+            Action.ResumeInterval: "30"
+            Action.ResumeRetryCount: "-1"
+            timeout: "6"
+profile_rsyslog::config_templates:
+  localhost_syslog:
+    type: "string"
+    string: "/var/log/loghost/%$myhostname%/syslog.log"
+  collected_syslog:
+    type: "string"
+    string: "/var/log/loghost/%HOSTNAME%/syslog.log"
+profile_rsyslog::collector::allow_ip_ranges:
+  - "10.142.0.0/16"
+  - "172.24.0.0/13"

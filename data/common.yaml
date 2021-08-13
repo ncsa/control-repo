@@ -81,6 +81,9 @@ profile_sudo::groups:
   org_asd: "ALL=(ALL) NOPASSWD: ALL"
   org_irst: "ALL=(ALL) NOPASSWD: ALL"
 
+profile_update_os::kernel_upgrade::enabled: false
+profile_update_os::yum_upgrade::enabled: false
+
 sssd::debug_level: 0
 sssd::domains:
   ncsa.illinois.edu:

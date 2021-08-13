@@ -14,3 +14,5 @@ profile_firewall::ignores:
   OUTPUT:nat:IPv4: "-d 127.0.0.0/8 -m addrtype --dst-type LOCAL -j DOCKER"
 
 profile_firewall::purge_all: false
+
+profile_update_os::kernel_upgrade::random_delay: 0

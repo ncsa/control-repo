@@ -19,6 +19,7 @@ class profile::base {
   include ::profile_timezone
   include ::profile_update_os
   include ::profile_virtual
+  include ::profile_xcat::client
   include ::sshd
 
   # Include some modules based off osfamily

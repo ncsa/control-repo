@@ -46,6 +46,8 @@ openafs::yumrepo::yumrepo:
     gpgkey: "https://its-repo.ncsa.illinois.edu/openafs/jsbillings/centos-$releasever-$basearch/pubkey.gpg"
     repo_gpgcheck: false
 
+pam_access::manage_pam: true
+
 profile::sssd::enablemkhomedir: true
 
 profile_allow_ssh_from_bastion::bastion_nodelist:
@@ -370,3 +372,14 @@ telegraf::inputs:
 telegraf::interval: "60s"
 telegraf::manage_repo: true
 telegraf::outputs: {}
+
+# Do not allow puppet-yum to apply updateonly_limit.
+# Reason #1
+# - conflict between profile_update_os and puppet-yum
+# - https://github.com/ncsa/puppet-profile_update_os/issues/3
+# Reason #2
+# - puppet-yum "cleanup_oldkernels" is broken on RHEL8
+# - https://github.com/voxpupuli/puppet-yum/issues/220
+yum::clean_old_kernels: false
+# Remove the next line also after Reason #1 is resolved.
+yum::config_options: {'installonly_limit': 2}

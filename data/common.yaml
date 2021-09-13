@@ -450,9 +450,8 @@ telegraf::inputs:
       - "e*"
       - "bond*"
   processes: [{}]
-  # NEED TO FIX telegraf ACCESS TO PUPPET REPORTS
-  #puppetagent:
-  #  location: "/opt/puppetlabs/puppet/public/last_run_summary.yaml"
+  puppetagent:
+    location: "/opt/puppetlabs/puppet/public/last_run_summary.yaml"
   swap: [{}]
   system: [{}]
   systemd_units:

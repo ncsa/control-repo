@@ -62,15 +62,15 @@ apache::vhost:
       '/usr/bin/tee
       -a /var/log/httpd/%{facts.fqdn}-ssl_access_ssl.log'
       |/bin/sh -c '/usr/bin/logger -t httpd -p local6.notice'"
-    #access_log_syslog: true
     docroot: "/var/www/html"
     error_log_pipe: "|/bin/sh -c
       '/usr/bin/tee
       -a /var/log/httpd/%{facts.fqdn}-ssl_error_ssl.log'
       |/bin/sh -c '/usr/bin/logger -t httpd -p local6.err'"
-    #error_log_syslog: true
     log_level: "warn"
     port: 443
+    setenv:
+      - "TZ America/Chicago"
     ssl: true
     headers:
       - "always set Strict-Transport-Security \"max-age=31536000\""
@@ -89,14 +89,14 @@ apache::vhost:
       '/usr/bin/tee
       -a /var/log/httpd/%{facts.fqdn}-nossl_access.log'
       |/bin/sh -c '/usr/bin/logger -t httpd -p local6.notice'"
-    #access_log_syslog: true
     docroot: "/var/www/html"
     error_log_pipe: "|/bin/sh -c
       '/usr/bin/tee
       -a /var/log/httpd/%{facts.fqdn}-nossl_error.log'
       |/bin/sh -c '/usr/bin/logger -t httpd -p local6.err'"
-    #error_log_syslog: true
     port: 80
+    setenv:
+      - "TZ America/Chicago"
     headers:
       - "always set Strict-Transport-Security \"max-age=31536000\""
       # - "set X-Frame-Options \"deny\""
@@ -469,4 +469,5 @@ telegraf::outputs: {}
 # - https://github.com/voxpupuli/puppet-yum/issues/220
 yum::clean_old_kernels: false
 # Remove the next line also after Reason #1 is resolved.
-yum::config_options: {'installonly_limit': 2}
+yum::config_options:
+  "installonly_limit": 2

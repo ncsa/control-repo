@@ -11,7 +11,7 @@ mod 'ncsa/pam_access', tag: 'ncsa/1.1.0', git: 'https://github.com/ncsa/puppet-p
 mod 'ncsa/profile_additional_packages', tag: 'v0.3.0', git: 'https://github.com/ncsa/puppet-profile_additional_packages'
 mod 'ncsa/profile_additional_yumrepos', tag: 'v0.1.3', git: 'https://github.com/ncsa/puppet-profile_additional_yumrepos'
 mod 'ncsa/profile_allow_ssh_from_bastion', tag: 'v0.2.2', git: 'https://github.com/ncsa/puppet-profile_allow_ssh_from_bastion'
-mod 'ncsa/profile_audit', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-profile_audit'
+mod 'ncsa/profile_audit', tag: 'v0.1.3', git: 'https://github.com/ncsa/puppet-profile_audit'
 mod 'ncsa/profile_dns_cache', tag: 'v1.0.0', git: 'https://github.com/ncsa/puppet-profile_dns_cache'
 mod 'ncsa/profile_email', tag: 'v0.2.2', git: 'https://github.com/ncsa/puppet-profile_email'
 mod 'ncsa/profile_firewall', tag: 'v1.0.5', git: 'https://github.com/ncsa/puppet-profile_firewall'

@@ -178,6 +178,13 @@ profile_update_os::yum_upgrade::enabled: false
 #rhsm::org: ""
 #rhsm::activationkey: ""
 
+profile_secrets::enable: false
+#profile_secrets::vault_api_prefix: "v1"
+#profile_secrets::vault_authmethod: "AUTHMETHOD"
+#profile_secrets::vault_base_url: "https://asd-vault1.internal.ncsa.edu:8200"
+#profile_secrets::vault_secrets_engine: "SECRETS"
+#profile_secrets::vault_kv_version: "v2"
+
 sssd::debug_level: 0
 sssd::domains:
   ncsa.illinois.edu:

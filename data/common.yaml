@@ -174,6 +174,10 @@ profile_sudo::groups:
 profile_update_os::kernel_upgrade::enabled: false
 profile_update_os::yum_upgrade::enabled: false
 
+# SET THESE PARAMTERS BASED ON RHSM LICENSING
+#rhsm::org: ""
+#rhsm::activationkey: ""
+
 sssd::debug_level: 0
 sssd::domains:
   ncsa.illinois.edu:

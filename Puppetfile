@@ -30,7 +30,7 @@ mod 'ncsa/profile_timezone', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet
 mod 'ncsa/profile_update_os', tag: 'v0.3.1', git: 'https://github.com/ncsa/puppet-profile_update_os'
 mod 'ncsa/profile_virtual', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_virtual'
 mod 'ncsa/profile_website', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_website'
-mod 'ncsa/profile_xcat', tag: 'v1.1.1', git: 'https://github.com/ncsa/puppet-profile_xcat.git'
+mod 'ncsa/profile_xcat', tag: 'v1.1.3', git: 'https://github.com/ncsa/puppet-profile_xcat.git'
 mod 'ncsa/rhsm', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-rhsm'
 mod 'ncsa/sshd', tag: 'v0.3.2', git: 'https://github.com/ncsa/puppet-sshd'
 mod 'ncsa/sssd', tag: 'v3.0.1', git: 'https://github.com/ncsa/puppet-sssd'

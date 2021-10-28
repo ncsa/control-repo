@@ -12,6 +12,7 @@ class profile::base {
   include ::profile_pam_access
   include ::profile_puppet_agent
   include ::profile_rsyslog
+  include ::profile_secrets
   include ::profile_selinux
   include ::profile_sudo
   include ::profile_system_auth

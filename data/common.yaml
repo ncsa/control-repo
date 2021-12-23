@@ -178,12 +178,19 @@ profile_update_os::yum_upgrade::enabled: false
 #rhsm::org: ""
 #rhsm::activationkey: ""
 
-profile_secrets::enable: false
-#profile_secrets::vault_api_prefix: "v1"
-#profile_secrets::vault_authmethod: "AUTHMETHOD"
-#profile_secrets::vault_base_url: "https://asd-vault1.internal.ncsa.edu:8200"
-#profile_secrets::vault_secrets_engine: "SECRETS"
-#profile_secrets::vault_kv_version: "v2"
+# SET THESE PARAMETERS BASED ON SPECIFIC PROJECT VAULT CONFIGURATION
+# SPECIFICALLY NEED TO UPDATE: authmethod & secrets_engine
+profile_secrets::enable: true
+profile_secrets::vault_api_prefix: "v1"
+profile_secrets::vault_authmethod: "control-repo"
+profile_secrets::vault_base_url: "https://asd-vault1.internal.ncsa.edu:8200"
+profile_secrets::vault_secrets_engine: "control-repo"
+profile_secrets::vault_kv_version: "v2"
+
+#profile_system_auth::kerberos::createhostkeytab: vault_hiera_hash
+profile_system_auth::kerberos::createhostuser: "controlrepo"
+profile_system_auth::kerberos::vaultkeytabkey: "createhost.keytab"
+profile_system_auth::kerberos::vaultsecretdir: "common"
 
 sssd::debug_level: 0
 sssd::domains:
@@ -191,11 +198,9 @@ sssd::domains:
     access_provider: "simple"
     # NCSA RECOMMENDS USING: auth_provider: "krb5"
     # BUT THAT ONLY WORKS IF YOU ARE CREATING KERBEROS HOSTKEYS
-    # YOU CAN ENABLE KERBEROS HOSTKEYS BY SETTING UP:
-    #   profile_system_auth::kerberos::createhost* PARAMETERS
-    # auth_provider IS SET TO ldap IN control-repo TEMPLATE TO NOT PUBLISH SECRETS
-    auth_provider: "ldap"
-    #auth_provider: "krb5"
+    # auth_provider CAN BE SET TO ldap IN control-repo TEMPLATE TO NOT PUBLISH SECRETS
+    #auth_provider: "ldap"
+    auth_provider: "krb5"
     cache_credentials: false
     chpass_provider: "krb5"
     debug_level: 0

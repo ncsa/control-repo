@@ -5,6 +5,16 @@ defaults:
   datadir: "data"
 
 hierarchy:
+  - name: "Secrets from Vault"
+    data_hash: "vault_hiera_hash"
+    uris:
+      - "https://asd-vault1.internal.ncsa.edu:8200/v1/control-repo/data/nodes/%{fqdn}"  # Node specific secrets
+      - "https://asd-vault1.internal.ncsa.edu:8200/v1/control-repo/data/common"         # Secrets common to all nodes
+    options:
+      timeout: 10
+      version: "v2"
+      auth_path: "control-repo"
+      ca_trust: "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
   - name: "Yaml backend"
     data_hash: "yaml_data"
     paths:

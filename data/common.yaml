@@ -17,11 +17,12 @@ lookup_options:
       strategy: "deep"
       merge_hash_arrays: true
 
+# THE %{lookup()}'S BELOW ALLOW THESE TO BE PULLED IN FROM VAULT SECRETS
 anchors:
   - &telegraf_outputs_influxdb_common
-    database: ""
-    username: ""
-    password: ""
+    database: "%{lookup('influxdb_database')}"  ## LOOKUP FROM VAULT
+    password: "%{lookup('influxdb_password')}"  ## LOOKUP FROM VAULT
+    username: "%{lookup('influxdb_username')}"  ## LOOKUP FROM VAULT
     insecure_skip_verify: false
     skip_database_creation: true
 
@@ -147,9 +148,10 @@ profile_allow_ssh_from_bastion::groups:
   - "org_asd"
   - "org_irst"
 
-profile_audit::qualys::enabled: false
+profile_audit::qualys::enabled: true
+#profile_audit::qualys::ssh_authorized_key: ""  # IDEALLY SET VIA VAULT
 
-profile_monitoring::telegraf::enabled: false
+profile_monitoring::telegraf::enabled: true
 profile_monitoring::telegraf::outputs:
   influxdb:
     npcf-influxdb-collector:
@@ -182,26 +184,19 @@ profile_sudo::groups:
   org_asd: "ALL=(ALL) NOPASSWD: ALL"
   org_irst: "ALL=(ALL) NOPASSWD: ALL"
 
-profile_update_os::kernel_upgrade::enabled: false
-profile_update_os::yum_upgrade::enabled: false
+profile_update_os::kernel_upgrade::enabled: true
+profile_update_os::yum_upgrade::enabled: true
 
 # SET THESE PARAMTERS BASED ON RHSM LICENSING
-#rhsm::org: ""
-#rhsm::activationkey: ""
+#rhsm::org: ""            # IDEALLY SET VIA VAULT
+#rhsm::activationkey: ""  # IDEALLY SET VIA VAULT
 
-# SET THESE PARAMETERS BASED ON SPECIFIC PROJECT VAULT CONFIGURATION
-# SPECIFICALLY NEED TO UPDATE: authmethod & secrets_engine
-profile_secrets::enable: true
-profile_secrets::vault_api_prefix: "v1"
-profile_secrets::vault_authmethod: "control-repo"
-profile_secrets::vault_base_url: "https://asd-vault1.internal.ncsa.edu:8200"
-profile_secrets::vault_secrets_engine: "control-repo"
-profile_secrets::vault_kv_version: "v2"
+# profile_secrets IS NOW DEPRICATED
+# FOLLOWING NEEDS TO BE SET UNTIL profile_secrets REMOVED FROM profile_system_auth
+profile_secrets::enable: false
 
-#profile_system_auth::kerberos::createhostkeytab: vault_hiera_hash
-profile_system_auth::kerberos::createhostuser: "controlrepo"
-profile_system_auth::kerberos::vaultkeytabkey: "createhost.keytab"
-profile_system_auth::kerberos::vaultsecretdir: "common"
+#profile_system_auth::kerberos::createhostkeytab: ""  # IDEALLY SET VIA VAULT
+#profile_system_auth::kerberos::createhostuser: ""    # IDEALLY SET VIA VAULT
 
 sssd::debug_level: 0
 sssd::domains:
@@ -487,14 +482,14 @@ telegraf::interval: "60s"
 telegraf::manage_repo: true
 telegraf::outputs: {}
 
-# Do not allow puppet-yum to apply updateonly_limit.
-# Reason #1
-# - conflict between profile_update_os and puppet-yum
+# DO NOT ALLOW puppet-yum TO APPLY updateonly_limit.
+# REASON #1
+# - CONFLICT BETWEEN profile_update_os AND puppet-yum
 # - https://github.com/ncsa/puppet-profile_update_os/issues/3
-# Reason #2
-# - puppet-yum "cleanup_oldkernels" is broken on RHEL8
+# REASON #2
+# - puppet-yum "cleanup_oldkernels" IS BROKEN ON RHEL8
 # - https://github.com/voxpupuli/puppet-yum/issues/220
 yum::clean_old_kernels: false
-# Remove the next line also after Reason #1 is resolved.
+# REMOVE THE NEXT LINE ALSO AFTER REASON #1 IS RESOLVED.
 yum::config_options:
   "installonly_limit": 2

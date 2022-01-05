@@ -12,7 +12,7 @@ class profile::base {
   include ::profile_pam_access
   include ::profile_puppet_agent
   include ::profile_rsyslog
-  include ::profile_secrets
+  ##include ::profile_secrets
   include ::profile_selinux
   include ::profile_sudo
   include ::profile_system_auth
@@ -22,6 +22,7 @@ class profile::base {
   include ::profile_virtual
   include ::profile_xcat::client
   include ::sshd
+  ##include ::vault_secrets
 
   # Include some modules based off osfamily
   case $facts['osfamily'] {

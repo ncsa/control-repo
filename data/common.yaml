@@ -161,12 +161,23 @@ profile_monitoring::telegraf::outputs:
       urls:
         - "https://ncsa-influxdb.ncsa.illinois.edu:8086"
 
+profile_pam_access::allow_rules:
+  "Allow telegraf for inventory script":
+    group: "telegraf"
+    origin: "LOCAL"
+
 profile_sudo::configs:
   common_disabled_users:
     priority: 1
     content:
       - "#deny former NCSA users"
       - "%all_disabled_usr ALL=(ALL) !ALL"
+  telegraf:
+    content:
+      - "#Allow telegraf to collect HW inventory data"
+      - "Defaults:telegraf !requiretty"
+      - "telegraf ALL = NOPASSWD: /usr/sbin/dmidecode"
+      - "telegraf ALL = NOPASSWD: /usr/bin/cat /sys/devices/virtual/dmi/id/product_uuid"
 profile_sudo::groups:
   org_asd: "ALL=(ALL) NOPASSWD: ALL"
   org_irst: "ALL=(ALL) NOPASSWD: ALL"

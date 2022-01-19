@@ -368,6 +368,7 @@ sssd::services:
       - "utmp"
       - "video"
       - "wheel"
+      - "xdmod"
     filter_users:
       - "activemq"
       - "adm"
@@ -378,6 +379,7 @@ sssd::services:
       - "chronograf"
       - "chrony"
       - "condor"
+      - "conserver"
       - "daemon"
       - "dbus"
       - "docker"
@@ -413,6 +415,7 @@ sssd::services:
       - "pdagent"
       - "polkitd"
       - "postfix"
+      - "postgres"
       - "rabbitmq"
       - "redis"
       - "rsbackup"
@@ -437,6 +440,7 @@ sssd::services:
       - "tss"
       - "unbound"
       - "wireshark"
+      - "xdmod"
   pam: {}
 
 telegraf::agent:

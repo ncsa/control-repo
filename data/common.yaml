@@ -222,20 +222,17 @@ sssd::domains:
     ldap_backup_uri:
       - "ldaps://ldap3.ncsa.illinois.edu"
       - "ldaps://ldap4.ncsa.illinois.edu"
-      - "ldaps://ldap.ncsa.illinois.edu"
     ldap_group_member: "uniqueMember"
-    ldap_group_search_base: "dc=ncsa,dc=illinois,dc=edu"
+    ldap_group_search_base: "ou=groups,dc=ncsa,dc=illinois,dc=edu"
     ldap_schema: "rfc2307bis"
     ldap_search_base: "dc=ncsa,dc=illinois,dc=edu"
-    #ldap_tls_cacert: "/etc/pki/ca-trust/source/anchors/incommon-ca.pem"
-    # Above not present on CentOS; below one is
     ldap_tls_cacert: "/etc/pki/tls/certs/ca-bundle.crt"
     ldap_tls_reqcert: "demand"
     ldap_uri:
       - "ldaps://ldap1.ncsa.illinois.edu"
       - "ldaps://ldap2.ncsa.illinois.edu"
     ldap_user_email: "login_via_email_address_is_disabled"
-    ldap_user_search_base: "dc=ncsa,dc=illinois,dc=edu"
+    ldap_user_search_base: "ou=people,dc=ncsa,dc=illinois,dc=edu"
     selinux_provider: "none"
     # LEAVE simple_allow_groups BLANK - ncsa/sshd MODULE DYNAMICALLY ADDS GROUPS
     #simple_allow_groups:

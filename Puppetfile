@@ -23,7 +23,7 @@ mod 'ncsa/profile_puppet_master', tag: 'v0.1.2', git: 'https://github.com/ncsa/p
 mod 'ncsa/profile_rsyslog', tag: 'v0.1.4', git: 'https://github.com/ncsa/puppet-profile_rsyslog'
 mod 'ncsa/profile_selinux', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_selinux'
 mod 'ncsa/profile_sudo', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-profile_sudo'
-mod 'ncsa/profile_system_auth', tag: 'v0.3.7', git: 'https://github.com/ncsa/puppet-profile_system_auth'
+mod 'ncsa/profile_system_auth', tag: 'v0.3.8', git: 'https://github.com/ncsa/puppet-profile_system_auth'
 mod 'ncsa/profile_timesync', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timesync'
 mod 'ncsa/profile_timezone', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timezone'
 mod 'ncsa/profile_update_os', tag: 'v0.3.6', git: 'https://github.com/ncsa/puppet-profile_update_os'

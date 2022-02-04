@@ -1,0 +1,25 @@
+---
+# Set global yum proxy
+yum::config_options:
+  proxy: "httpproxy.ncsa.illinois.edu:3128"
+
+
+# Add yum repos
+yum::managed_repos:
+  - "influx"
+  - "rhel-8-for-x86_64-baseos-eus-rpms"
+yum::repos:
+  influx:
+    ensure: "present"
+    enabled: true
+    descr: "Influx Data"
+    baseurl: "http://ngale-adm01.ngale.internal.ncsa.edu/install/post/repos/rhels8.4/x86_64/influx/2022-01-27-1643309135"
+    gpgcheck: true
+    gpgkey: "http://ngale-adm01.ngale.internal.ncsa.edu/install/post/repos/rhels8.4/x86_64/influx/influxdb.key"
+  rhel-8-for-x86_64-baseos-eus-rpms:
+    ensure: "present"
+    enabled: true
+    descr: "Red Hat Enterprise Linux 8 for x86_64 - BaseOS EUS (RPMs)"
+    baseurl: "http://ngale-adm01.ngale.internal.ncsa.edu/install/post/repos/rhels8.4/x86_64/rhel-8-for-x86_64-baseos-eus-rpms/2022-01-27-1643309135"
+    gpgcheck: true
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"

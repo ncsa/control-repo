@@ -108,6 +108,12 @@ apache::vhost:
         rewrite_cond: "%%{}{HTTPS} off"
         rewrite_rule: "(.*)  https://%%{}{SERVER_NAME}/$1 [R,L]"
 
+# disable user namespaces (needed for containers) by default
+augeasproviders::instances::sysctl_hash:
+  user.max_user_namespaces:
+    target: "/etc/sysctl.d/60-ncsa-default.conf"
+    value: 0
+
 letsencrypt::email: "web@ncsa.illinois.edu"
 letsencrypt::renew_cron_ensure: "present"
 letsencrypt::renew_cron_minute: 0

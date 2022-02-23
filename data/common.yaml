@@ -191,6 +191,7 @@ profile_sudo::groups:
   org_irst: "ALL=(ALL) NOPASSWD: ALL"
 
 profile_update_os::kernel_upgrade::enabled: true
+
 profile_update_os::yum_upgrade::enabled: true
 
 # SET THESE PARAMTERS BASED ON RHSM LICENSING

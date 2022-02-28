@@ -198,10 +198,6 @@ profile_update_os::yum_upgrade::enabled: true
 #rhsm::org: ""            # IDEALLY SET VIA VAULT
 #rhsm::activationkey: ""  # IDEALLY SET VIA VAULT
 
-# profile_secrets IS NOW DEPRICATED
-# FOLLOWING NEEDS TO BE SET UNTIL profile_secrets REMOVED FROM profile_system_auth
-profile_secrets::enable: false
-
 #profile_system_auth::kerberos::createhostkeytab: ""  # IDEALLY SET VIA VAULT
 #profile_system_auth::kerberos::createhostuser: ""    # IDEALLY SET VIA VAULT
 

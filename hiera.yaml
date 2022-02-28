@@ -11,9 +11,8 @@ hierarchy:
       - "https://asd-vault1.internal.ncsa.edu:8200/v1/control-repo/data/nodes/%{fqdn}"  # Node specific secrets
       - "https://asd-vault1.internal.ncsa.edu:8200/v1/control-repo/data/common"         # Secrets common to all nodes
     options:
-      timeout: 10
       version: "v2"
-      auth_path: "control-repo"
+      token_file: "/etc/puppetlabs/puppetserver/token/vault.token"
       ca_trust: "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
   - name: "Yaml backend"
     data_hash: "yaml_data"

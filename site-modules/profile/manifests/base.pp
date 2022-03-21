@@ -21,6 +21,7 @@ class profile::base {
   include ::profile_timesync
   include ::profile_timezone
   include ::profile_update_os
+  include ::profile_user_environment
   include ::profile_virtual
   include ::profile_xcat::client
   include ::sshd

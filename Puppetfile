@@ -29,6 +29,7 @@ mod 'ncsa/profile_system_auth', tag: 'v0.3.8', git: 'https://github.com/ncsa/pup
 mod 'ncsa/profile_timesync', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timesync'
 mod 'ncsa/profile_timezone', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timezone'
 mod 'ncsa/profile_update_os', tag: 'v0.3.7', git: 'https://github.com/ncsa/puppet-profile_update_os'
+mod 'ncsa/profile_user_environment', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_user_environment'
 mod 'ncsa/profile_virtual', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_virtual'
 mod 'ncsa/profile_website', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_website'
 mod 'ncsa/profile_xcat', tag: 'v1.1.5', git: 'https://github.com/ncsa/puppet-profile_xcat.git'

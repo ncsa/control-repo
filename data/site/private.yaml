@@ -1,0 +1,7 @@
+---
+rhsm::proxy::hostname: "httpproxy.ncsa.illinois.edu"
+rhsm::proxy::port: "3128"
+
+yum::config_options:
+  installonly_limit: 2
+  proxy: "httpproxy.ncsa.illinois.edu:3128"

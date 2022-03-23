@@ -496,4 +496,4 @@ telegraf::outputs: {}
 yum::clean_old_kernels: false
 # REMOVE THE NEXT LINE ALSO AFTER REASON #1 IS RESOLVED.
 yum::config_options:
-  "installonly_limit": 2
+  installonly_limit: 2

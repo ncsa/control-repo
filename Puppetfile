@@ -33,7 +33,7 @@ mod 'ncsa/profile_update_os', tag: 'v0.3.7', git: 'https://github.com/ncsa/puppe
 mod 'ncsa/profile_user_environment', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_user_environment'
 mod 'ncsa/profile_virtual', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_virtual'
 mod 'ncsa/profile_website', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_website'
-mod 'ncsa/profile_xcat', tag: 'v1.1.5', git: 'https://github.com/ncsa/puppet-profile_xcat.git'
+mod 'ncsa/profile_xcat', tag: 'v1.1.6', git: 'https://github.com/ncsa/puppet-profile_xcat.git'
 mod 'ncsa/rhsm', tag: 'v0.1.5', git: 'https://github.com/ncsa/puppet-rhsm'
 mod 'ncsa/sshd', tag: 'v0.3.6', git: 'https://github.com/ncsa/puppet-sshd'
 mod 'ncsa/sssd', tag: 'v3.0.2', git: 'https://github.com/ncsa/puppet-sssd'

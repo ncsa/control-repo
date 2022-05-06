@@ -37,7 +37,7 @@ mod 'ncsa/profile_xcat', tag: 'v1.1.6', git: 'https://github.com/ncsa/puppet-pro
 mod 'ncsa/rhsm', tag: 'v0.1.6', git: 'https://github.com/ncsa/puppet-rhsm'
 mod 'ncsa/sshd', tag: 'v0.3.8', git: 'https://github.com/ncsa/puppet-sshd'
 mod 'ncsa/sssd', tag: 'v3.0.2', git: 'https://github.com/ncsa/puppet-sssd'
-mod 'ncsa/telegraf', tag: 'v3.1.1', git: 'https://github.com/ncsa/puppet-telegraf.git'
+mod 'ncsa/telegraf', tag: 'v3.1.2', git: 'https://github.com/ncsa/puppet-telegraf.git'
 mod 'puppet/chrony', '1.0.0'
 mod 'puppet/epel', '3.0.1'
 mod 'puppet/letsencrypt', '6.0.0'

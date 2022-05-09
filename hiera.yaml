@@ -5,15 +5,14 @@ defaults:
   datadir: "data"
 
 hierarchy:
-  - name: "Secrets from Vault"
-    data_hash: "vault_hiera_hash"
-    uris:
-      - "https://asd-vault1.internal.ncsa.edu:8200/v1/control-repo/data/nodes/%{fqdn}"  # Node specific secrets
-      - "https://asd-vault1.internal.ncsa.edu:8200/v1/control-repo/data/common"         # Secrets common to all nodes
+  - name: "Secret data: per-node, common"
+    lookup_key: "eyaml_lookup_key"  # eyaml backend
+    paths:
+      - "secrets/nodes/%{trusted.certname}.eyaml"
+      - "secrets/common.eyaml"
     options:
-      version: "v2"
-      token_file: "/etc/puppetlabs/puppetserver/token/vault.token"
-      ca_trust: "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
+      pkcs7_private_key: "/etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem"
+      pkcs7_public_key: "/etc/puppetlabs/puppet/eyaml/public_key.pkcs7.pem"
   - name: "Yaml backend"
     data_hash: "yaml_data"
     paths:

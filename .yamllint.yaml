@@ -14,3 +14,8 @@ ignore: |
   .rubocop.yml
   .travis.yml
   appveyor.yml
+yaml-files:
+  - "*.yaml"
+  - "*.yml"
+  - ".yamllint"
+  - "*.eyaml"

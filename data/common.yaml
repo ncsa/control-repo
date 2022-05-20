@@ -17,12 +17,12 @@ lookup_options:
       strategy: "deep"
       merge_hash_arrays: true
 
-# THE %{lookup()}'S BELOW ALLOW THESE TO BE PULLED IN FROM VAULT SECRETS
+# THE %{lookup()}'S BELOW ALLOW THESE TO BE PULLED IN FROM EYAML SECRETS
 anchors:
   - &telegraf_outputs_influxdb_common
-    database: "%{lookup('influxdb_database')}"  ## LOOKUP FROM VAULT
-    password: "%{lookup('influxdb_password')}"  ## LOOKUP FROM VAULT
-    username: "%{lookup('influxdb_username')}"  ## LOOKUP FROM VAULT
+    database: "%{lookup('influxdb_database')}"  ## LOOKUP FROM EYAML
+    password: "%{lookup('influxdb_password')}"  ## LOOKUP FROM EYAML
+    username: "%{lookup('influxdb_username')}"  ## LOOKUP FROM EYAML
     insecure_skip_verify: false
     skip_database_creation: true
 
@@ -155,7 +155,6 @@ profile_allow_ssh_from_bastion::groups:
   - "org_irst"
 
 profile_audit::qualys::enabled: true
-#profile_audit::qualys::ssh_authorized_key: ""  # IDEALLY SET VIA VAULT
 
 profile_monitoring::telegraf::enabled: true
 profile_monitoring::telegraf::outputs:
@@ -194,12 +193,7 @@ profile_update_os::kernel_upgrade::enabled: true
 
 profile_update_os::yum_upgrade::enabled: true
 
-# SET THESE PARAMTERS BASED ON RHSM LICENSING
-#rhsm::org: ""            # IDEALLY SET VIA VAULT
-#rhsm::activationkey: ""  # IDEALLY SET VIA VAULT
-
-#profile_system_auth::kerberos::createhostkeytab: ""  # IDEALLY SET VIA VAULT
-#profile_system_auth::kerberos::createhostuser: ""    # IDEALLY SET VIA VAULT
+profile_xcat::master_node_ip: "172.28.18.18"
 
 sssd::debug_level: 0
 sssd::domains:

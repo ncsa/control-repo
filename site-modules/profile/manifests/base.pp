@@ -11,6 +11,7 @@ class profile::base {
   include ::profile_hardening
   include ::profile_monitoring
   include ::profile_motd
+  include ::profile_network
   include ::profile_pam_access
   include ::profile_puppet_agent
   include ::profile_rsyslog

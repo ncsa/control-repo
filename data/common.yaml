@@ -458,6 +458,7 @@ telegraf::inputs:
       - "nfs"
       - "nfs4"
       - "tmpfs"
+      - "tracefs"
   io: [{}]
   # NEED TO ADD ipmi_sensor FOR PHYSICAL NODES
   #ipmi_sensor:

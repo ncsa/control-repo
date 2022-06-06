@@ -459,7 +459,10 @@ telegraf::inputs:
       - "nfs4"
       - "tmpfs"
       - "tracefs"
-  io: [{}]
+  diskio:
+    devices:
+      - "sd*"
+      - "vd*"
   # NEED TO ADD ipmi_sensor FOR PHYSICAL NODES
   #ipmi_sensor:
   #  path: "/usr/bin/ipmitool"

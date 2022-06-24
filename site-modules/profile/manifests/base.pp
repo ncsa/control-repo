@@ -1,6 +1,14 @@
 # Include basic profile classes
 class profile::base {
 
+  # Include some modules based off osfamily
+  case $facts['osfamily'] {
+    'Redhat' : {
+      include ::profile::redhat
+    }
+    default  : { } # do nothing
+  }
+
   include ::augeasproviders::instances
   include ::profile_additional_packages
   include ::profile_allow_ssh_from_bastion
@@ -25,13 +33,5 @@ class profile::base {
   include ::profile_virtual
   include ::profile_xcat::client
   include ::sshd
-
-  # Include some modules based off osfamily
-  case $facts['osfamily'] {
-    'Redhat' : {
-      include ::profile::redhat
-    }
-    default  : { } # do nothing
-  }
 
 }

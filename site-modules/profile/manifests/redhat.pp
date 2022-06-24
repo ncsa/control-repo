@@ -5,8 +5,11 @@ class profile::redhat {
   case $facts['operatingsystem'] {
     'RedHat' : {
       include ::rhsm
+      Class['profile::redhat'] -> Class['rhsm'] -> Class['yum'] -> Class['profile_additional_packages']
     }
-    default  : { } # do nothing
+    default  : {
+      Class['profile::redhat'] -> Class['yum'] -> Class['profile_additional_packages']
+    }
   }
 
   include ::yum

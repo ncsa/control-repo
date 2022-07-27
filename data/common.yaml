@@ -118,7 +118,7 @@ letsencrypt::email: "web@ncsa.illinois.edu"
 letsencrypt::renew_cron_ensure: "present"
 letsencrypt::renew_cron_minute: 0
 letsencrypt::renew_cron_hour: 6
-letsencrypt::renew_cron_monthday: "*/15"
+letsencrypt::renew_cron_monthday: "*/7"
 
 message: "This node is using common data"
 

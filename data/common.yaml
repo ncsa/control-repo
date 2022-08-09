@@ -143,8 +143,6 @@ openafs::yumrepo::yumrepo:
 
 pam_access::manage_pam: true
 
-profile::sssd::enablemkhomedir: true
-
 profile_allow_ssh_from_bastion::bastion_nodelist:
   - "141.142.148.5"
   - "141.142.236.22"
@@ -188,6 +186,8 @@ profile_sudo::configs:
 profile_sudo::groups:
   org_asd: "ALL=(ALL) NOPASSWD: ALL"
   org_irst: "ALL=(ALL) NOPASSWD: ALL"
+
+profile_system_auth::config::enable_mkhomedir: true
 
 profile_update_os::kernel_upgrade::enabled: true
 

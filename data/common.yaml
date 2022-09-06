@@ -457,6 +457,7 @@ telegraf::inputs:
       - "lustre"
       - "nfs"
       - "nfs4"
+      - "nsfs"
       - "tmpfs"
       - "tracefs"
   diskio:

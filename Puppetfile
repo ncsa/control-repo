@@ -17,7 +17,7 @@ mod 'ncsa/profile_allow_ssh_from_bastion', tag: 'v0.2.4', git: 'https://github.c
 mod 'ncsa/profile_audit', tag: 'v0.1.11', git: 'https://github.com/ncsa/puppet-profile_audit'
 mod 'ncsa/profile_dns_cache', tag: 'v1.1.2', git: 'https://github.com/ncsa/puppet-profile_dns_cache'
 mod 'ncsa/profile_duo', tag: 'v1.0.4', git: 'https://github.com/ncsa/puppet-profile_duo'
-mod 'ncsa/profile_email', tag: 'v0.2.2', git: 'https://github.com/ncsa/puppet-profile_email'
+mod 'ncsa/profile_email', tag: 'v0.2.3', git: 'https://github.com/ncsa/puppet-profile_email'
 mod 'ncsa/profile_firewall', tag: 'v1.0.7', git: 'https://github.com/ncsa/puppet-profile_firewall'
 mod 'ncsa/profile_globus', tag: 'v0.3.1', git: 'https://github.com/ncsa/puppet-profile_globus'
 mod 'ncsa/profile_gpfs_client', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_gpfs_client.git'

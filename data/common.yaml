@@ -410,6 +410,8 @@ sssd::services:
       - "polkitd"
       - "postfix"
       - "postgres"
+      - "puppet"
+      - "puppetdb"
       - "rabbitmq"
       - "redis"
       - "rsbackup"

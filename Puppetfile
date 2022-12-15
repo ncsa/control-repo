@@ -34,6 +34,7 @@ mod 'ncsa/profile_mysql_server', tag: 'v0.1.1', git: 'https://github.com/ncsa/pu
 mod 'ncsa/profile_network', tag: 'v1.0.0', git: 'https://github.com/ncsa/puppet-profile_network.git'
 mod 'ncsa/profile_nfs_client', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_nfs_client'
 mod 'ncsa/profile_pam_access', tag: 'v0.0.6', git: 'https://github.com/ncsa/puppet-profile_pam_access'
+mod 'ncsa/profile_postgres_server', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_postgres_server'
 mod 'ncsa/profile_puppet_agent', tag: 'v0.1.3', git: 'https://github.com/ncsa/puppet-profile_puppet_agent'
 mod 'ncsa/profile_puppet_master', tag: 'v0.1.5', git: 'https://github.com/ncsa/puppet-profile_puppet_master'
 mod 'ncsa/profile_rsyslog', tag: 'v0.1.4', git: 'https://github.com/ncsa/puppet-profile_rsyslog'

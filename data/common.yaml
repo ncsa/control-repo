@@ -166,6 +166,18 @@ profile_monitoring::telegraf::outputs:
       urls:
         - "https://ncsa-influxdb.ncsa.illinois.edu:8086"
 
+profile_motd::next_maintenance:
+  - "none"
+  - "none"
+  #- "2024-12-10T06:00:00"
+  #- "2024-12-10T10:00:00"
+profile_motd::notice: |-2
+         _  _   __   __    _
+        | \| | / _| / _|  / \
+        | \\ |( (_  \_ \ | o |
+        |_|\_| \__| |__/ |_n_|
+    Configured by https://github.com/ncsa/control-repo
+
 profile_pam_access::allow_rules:
   "Allow telegraf for inventory script":
     group: "telegraf"

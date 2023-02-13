@@ -26,7 +26,7 @@ mod 'ncsa/profile_hardening', tag: 'v0.4.0', git: 'https://github.com/ncsa/puppe
 mod 'ncsa/profile_hostbased_ssh', tag: 'v1.0.3', git: 'https://github.com/ncsa/puppet-profile_hostbased_ssh'
 mod 'ncsa/profile_java', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_java.git'
 mod 'ncsa/profile_lmod', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_lmod.git'
-mod 'ncsa/profile_lustre', tag: 'v1.4.3',  git: 'https://github.com/ncsa/puppet-profile_lustre'
+mod 'ncsa/profile_lustre', tag: 'v1.4.4',  git: 'https://github.com/ncsa/puppet-profile_lustre'
 mod 'ncsa/profile_lvm', tag: 'v1.0.0',  git: 'https://github.com/ncsa/puppet-profile_lvm'
 mod 'ncsa/profile_monitoring', tag: 'v0.1.9', git: 'https://github.com/ncsa/puppet-profile_monitoring'
 mod 'ncsa/profile_motd', tag: 'v0.3.0', git: 'https://github.com/ncsa/puppet-profile_motd'

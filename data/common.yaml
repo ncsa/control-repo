@@ -153,6 +153,11 @@ profile_allow_ssh_from_bastion::groups:
   - "org_irst"
 
 profile_audit::qualys::enabled: true
+# ENABLE FOLLOWING IF ANY HOSTS WILL RUN RHEL EUS VERSIONS
+profile_audit::qualys::escalated_scans: true
+# ENABLE FOLLOWING IF USING RHEL EUS BUT RHSM SET TO NOT MANAGE REPOS
+# e.g. USING MIRRORED RHEL REPOS
+#profile_audit::qualys_eus_reporting::enabled: true
 
 profile_monitoring::telegraf::enabled: true
 profile_monitoring::telegraf::outputs:

@@ -36,6 +36,7 @@ apache::access_log_file: "|/usr/bin/logger -t httpd -p local6.info"
 apache::error_log: "syslog:local6"
 apache::error_log_file: "syslog:local6"
 #apache::auth_oidc: true
+apache::mod::proxy: {}
 apache::mod::ssl:
   ssl_cipher: "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH"
   ssl_compression: false

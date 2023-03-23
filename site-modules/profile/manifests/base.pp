@@ -17,6 +17,7 @@ class profile::base {
   include ::profile_email
   include ::profile_firewall
   include ::profile_hardening
+  include ::profile_hosts
   include ::profile_monitoring
   include ::profile_motd
   include ::profile_network

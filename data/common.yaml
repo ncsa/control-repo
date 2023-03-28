@@ -484,11 +484,6 @@ telegraf::inputs:
     devices:
       - "sd*"
       - "vd*"
-  # NEED TO ADD ipmi_sensor FOR PHYSICAL NODES
-  #ipmi_sensor:
-  #  path: "/usr/bin/ipmitool"
-  #  interval: "60s"
-  #  timeout: "10s"
   mem: [{}]
   net:
     interfaces:

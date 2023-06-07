@@ -1,4 +1,6 @@
 ---
+profile_backup::common::pip_proxy: "http://httpproxy.ncsa.illinois.edu:3128"
+
 rhsm::proxy::hostname: "httpproxy.ncsa.illinois.edu"
 rhsm::proxy::port: "3128"
 

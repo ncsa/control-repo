@@ -44,7 +44,7 @@ mod 'ncsa/profile_selinux', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-
 mod 'ncsa/profile_slurm', tag: 'v1.5.2', git: 'https://github.com/ncsa/puppet-profile_slurm.git'
 mod 'ncsa/profile_sudo', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-profile_sudo'
 mod 'ncsa/profile_system_auth', tag: 'v0.4.0', git: 'https://github.com/ncsa/puppet-profile_system_auth'
-mod 'ncsa/profile_timesync', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timesync'
+mod 'ncsa/profile_timesync', tag: 'v0.2.2', git: 'https://github.com/ncsa/puppet-profile_timesync'
 mod 'ncsa/profile_timezone', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timezone'
 mod 'ncsa/profile_update_os', tag: 'v0.4.1', git: 'https://github.com/ncsa/puppet-profile_update_os'
 mod 'ncsa/profile_user_environment', tag: 'v0.1.4', git: 'https://github.com/ncsa/puppet-profile_user_environment'

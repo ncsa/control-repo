@@ -150,8 +150,10 @@ profile_allow_ssh_from_bastion::bastion_nodelist:
   - "141.142.236.23"
   - "141.142.148.24"
 profile_allow_ssh_from_bastion::groups:
-  - "org_asd"
+  - "grp_asd_admin"
+  - "org_cs"
   - "org_irst"
+  - "org_sp"
 
 profile_audit::qualys::enabled: true
 # ENABLE FOLLOWING IF ANY HOSTS WILL RUN RHEL EUS VERSIONS
@@ -202,8 +204,10 @@ profile_sudo::configs:
       - "telegraf ALL = NOPASSWD: /usr/sbin/dmidecode"
       - "telegraf ALL = NOPASSWD: /usr/bin/cat /sys/devices/virtual/dmi/id/product_uuid"
 profile_sudo::groups:
-  org_asd: "ALL=(ALL) NOPASSWD: ALL"
+  grp_asd_admin: "ALL=(ALL) NOPASSWD: ALL"
+  org_cs: "ALL=(ALL) NOPASSWD: ALL"
   org_irst: "ALL=(ALL) NOPASSWD: ALL"
+  org_sp: "ALL=(ALL) NOPASSWD: ALL"
 
 profile_system_auth::config::enable_mkhomedir: true
 

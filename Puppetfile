@@ -41,7 +41,7 @@ mod 'ncsa/profile_puppet_agent', tag: 'v0.1.3', git: 'https://github.com/ncsa/pu
 mod 'ncsa/profile_puppet_master', tag: 'v0.1.6', git: 'https://github.com/ncsa/puppet-profile_puppet_master'
 mod 'ncsa/profile_rsyslog', tag: 'v0.2.3', git: 'https://github.com/ncsa/puppet-profile_rsyslog'
 mod 'ncsa/profile_selinux', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_selinux'
-mod 'ncsa/profile_slurm', tag: 'v1.6.0', git: 'https://github.com/ncsa/puppet-profile_slurm.git'
+mod 'ncsa/profile_slurm', tag: 'v1.6.1', git: 'https://github.com/ncsa/puppet-profile_slurm.git'
 mod 'ncsa/profile_sudo', tag: 'v0.1.2', git: 'https://github.com/ncsa/puppet-profile_sudo'
 mod 'ncsa/profile_system_auth', tag: 'v0.4.0', git: 'https://github.com/ncsa/puppet-profile_system_auth'
 mod 'ncsa/profile_timesync', tag: 'v0.2.2', git: 'https://github.com/ncsa/puppet-profile_timesync'

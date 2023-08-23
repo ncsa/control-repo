@@ -461,6 +461,11 @@ sssd::services:
       - "xdmod"
   pam: {}
 
+# disable systemd journald rate-limiting
+systemd::journald_settings:
+  RateLimitBurst: 0
+  RateLimitIntervalSec: "0s"
+
 telegraf::agent:
   flush_interval: "10s"
   metric_buffer_limit: "100000"

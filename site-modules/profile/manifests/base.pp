@@ -25,6 +25,7 @@ class profile::base {
   include ::profile_puppet_agent
   include ::profile_rsyslog
   include ::profile_selinux
+  include ::profile_session_log
   include ::profile_sudo
   include ::profile_system_auth
   include ::profile_timesync

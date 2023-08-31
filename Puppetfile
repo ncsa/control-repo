@@ -21,7 +21,7 @@ mod 'ncsa/profile_dns_cache', tag: 'v1.1.3', git: 'https://github.com/ncsa/puppe
 mod 'ncsa/profile_duo', tag: 'v1.0.5', git: 'https://github.com/ncsa/puppet-profile_duo'
 mod 'ncsa/profile_email', tag: 'v0.2.5', git: 'https://github.com/ncsa/puppet-profile_email'
 mod 'ncsa/profile_firewall', tag: 'v1.1.2', git: 'https://github.com/ncsa/puppet-profile_firewall'
-mod 'ncsa/profile_globus', tag: 'v0.4.1', git: 'https://github.com/ncsa/puppet-profile_globus'
+mod 'ncsa/profile_globus', tag: 'v0.5.2', git: 'https://github.com/ncsa/puppet-profile_globus'
 mod 'ncsa/profile_gpfs_client', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_gpfs_client.git'
 mod 'ncsa/profile_gpu', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_gpu.git'
 mod 'ncsa/profile_hardening', tag: 'v0.4.0', git: 'https://github.com/ncsa/puppet-profile_hardening'

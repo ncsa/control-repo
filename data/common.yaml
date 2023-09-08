@@ -449,6 +449,7 @@ sssd::services:
       - "sshd"
       - "sssd"
       - "suiadmin"
+      - "svcicitelegraf"
       - "sync"
       - "systemd-bus-proxy"
       - "systemd-network"

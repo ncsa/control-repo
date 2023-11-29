@@ -23,7 +23,7 @@ mod 'ncsa/profile_email', tag: 'v0.2.5', git: 'https://github.com/ncsa/puppet-pr
 mod 'ncsa/profile_firewall', tag: 'v1.1.2', git: 'https://github.com/ncsa/puppet-profile_firewall'
 mod 'ncsa/profile_globus', tag: 'v0.5.2', git: 'https://github.com/ncsa/puppet-profile_globus'
 mod 'ncsa/profile_gpfs_client', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_gpfs_client.git'
-mod 'ncsa/profile_gpu', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_gpu.git'
+mod 'ncsa/profile_gpu', tag: 'v1.0.0', git: 'https://github.com/ncsa/puppet-profile_gpu.git'
 mod 'ncsa/profile_hardening', tag: 'v0.4.0', git: 'https://github.com/ncsa/puppet-profile_hardening'
 mod 'ncsa/profile_hostbased_ssh', tag: 'v1.0.3', git: 'https://github.com/ncsa/puppet-profile_hostbased_ssh'
 mod 'ncsa/profile_hosts', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_hosts'

@@ -8,7 +8,7 @@ lookup_options:
     merge:
       strategy: "deep"
       merge_hash_arrays: true
-  profile_monitoring::telegraf::input_extra_scripts:
+  profile_monitoring::telegraf::inputs_extra_scripts:
     merge:
       strategy: "deep"
       merge_hash_arrays: true

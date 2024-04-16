@@ -217,6 +217,10 @@ profile_update_os::yum_upgrade::enabled: true
 
 profile_xcat::master_node_ip: "172.28.18.18"
 
+# we have not yet tested cgroups-v2 with Slurm, so pin
+# to v1 for now
+slurm::cgroup_plugin: "cgroup/v1"
+
 sssd::debug_level: 0
 sssd::domains:
   ncsa.illinois.edu:

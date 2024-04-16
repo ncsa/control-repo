@@ -87,5 +87,9 @@ mod 'treydock/apptainer', '2.0.0'
 mod 'treydock/lmod', '3.2.0'
 mod 'treydock/munge', '4.1.0'
 mod 'treydock/nhc', '5.0.0'
-mod 'treydock/slurm', '2.2.0'
-mod 'treydock/slurm_providers', '0.12.3'
+# These versions of treydock/slurm* are updated for Slurm v23.11 support. They should also
+# work for Slurm v22.05 and v23.02 but NCSA has not tested them with those. Consider using
+# the earlier modules versions specified in comments below if still using those earlier
+# versions of Slurm.
+mod 'treydock/slurm', '4.0.1'  # (previously 2.2.0) 
+mod 'treydock/slurm_providers', '0.14.1'  # (previously 0.12.3) 

@@ -29,7 +29,7 @@ mod 'ncsa/profile_hostbased_ssh', tag: 'v1.0.3', git: 'https://github.com/ncsa/p
 mod 'ncsa/profile_hosts', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_hosts'
 mod 'ncsa/profile_java', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_java.git'
 mod 'ncsa/profile_lmod', tag: 'v0.1.0', git: 'https://github.com/ncsa/puppet-profile_lmod.git'
-mod 'ncsa/profile_lustre', tag: 'v2.0.2',  git: 'https://github.com/ncsa/puppet-profile_lustre'
+mod 'ncsa/profile_lustre', tag: 'v3.2.0',  git: 'https://github.com/ncsa/puppet-profile_lustre'
 mod 'ncsa/profile_lvm', tag: 'v1.0.0',  git: 'https://github.com/ncsa/puppet-profile_lvm'
 mod 'ncsa/profile_monitoring', tag: 'v0.3.2', git: 'https://github.com/ncsa/puppet-profile_monitoring'
 mod 'ncsa/profile_motd', tag: 'v0.3.2', git: 'https://github.com/ncsa/puppet-profile_motd'

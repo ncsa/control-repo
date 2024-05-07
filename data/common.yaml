@@ -152,8 +152,8 @@ profile_allow_ssh_from_bastion::bastion_nodelist:
 profile_allow_ssh_from_bastion::groups:
   - "grp_asd_admin"
   - "org_cs"
-  - "org_irst"
   - "org_sp"
+  - "sec_ops_vet"
 
 profile_audit::qualys::enabled: true
 # ENABLE FOLLOWING IF ANY HOSTS WILL RUN RHEL EUS VERSIONS
@@ -203,8 +203,8 @@ profile_sudo::configs:
 profile_sudo::groups:
   grp_asd_admin: "ALL=(ALL) NOPASSWD: ALL"
   org_cs: "ALL=(ALL) NOPASSWD: ALL"
-  org_irst: "ALL=(ALL) NOPASSWD: ALL"
   org_sp: "ALL=(ALL) NOPASSWD: ALL"
+  sec_ops_vet: "ALL=(ALL) NOPASSWD: ALL"
 
 profile_system_auth::config::enable_mkhomedir: true
 

@@ -50,7 +50,7 @@ mod 'ncsa/profile_system_auth', tag: 'v0.4.0', git: 'https://github.com/ncsa/pup
 mod 'ncsa/profile_timesync', tag: 'v0.2.2', git: 'https://github.com/ncsa/puppet-profile_timesync'
 mod 'ncsa/profile_timezone', tag: 'v0.2.1', git: 'https://github.com/ncsa/puppet-profile_timezone'
 mod 'ncsa/profile_umask', tag: 'v0.0.2', git: 'https://github.com/ncsa/puppet-profile_umask'
-mod 'ncsa/profile_update_os', tag: 'v0.4.2', git: 'https://github.com/ncsa/puppet-profile_update_os'
+mod 'ncsa/profile_update_os', tag: 'v0.4.3', git: 'https://github.com/ncsa/puppet-profile_update_os'
 mod 'ncsa/profile_user_environment', tag: 'v0.2.0', git: 'https://github.com/ncsa/puppet-profile_user_environment'
 mod 'ncsa/profile_virtual', tag: 'v0.1.1', git: 'https://github.com/ncsa/puppet-profile_virtual'
 mod 'ncsa/profile_website', tag: 'v0.1.6', git: 'https://github.com/ncsa/puppet-profile_website'

@@ -246,7 +246,6 @@ sssd::domains:
     ldap_group_search_base: "ou=groups,dc=ncsa,dc=illinois,dc=edu"
     ldap_schema: "rfc2307bis"
     ldap_search_base: "dc=ncsa,dc=illinois,dc=edu"
-    ldap_tls_cacert: "/etc/pki/tls/certs/ca-bundle.crt"
     ldap_tls_reqcert: "demand"
     ldap_uri:
       - "ldaps://ldap1.ncsa.illinois.edu"
@@ -471,6 +470,10 @@ systemd::journald_settings:
 telegraf::agent:
   flush_interval: "10s"
   metric_buffer_limit: "100000"
+# TELEGRAF MODULE FOR SUSE DEFAULTS TO INSTALLING VERSION 1.31.0
+# IF YOU NEED SOMETHING NEWER, SPECIFY IT BELOW
+# AVAILABLE VERSIONS ARE HERE: https://www.influxdata.com/downloads/
+#telegraf::archive_version: "1.31.0"
 telegraf::config_file_mode: "0640"
 telegraf::config_folder_mode: "0750"
 telegraf::flush_jitter: "10s"
